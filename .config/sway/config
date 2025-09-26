@@ -1,0 +1,88 @@
+set $mod Mod4
+set $launcher rofi -show drun
+set $term alacritty
+set $browser firefox
+set $filemanager dolphin
+
+
+exec wl-paste -t text --watch clipman store --no-persist
+seat seat0 xcursor_theme Vanilla-DMZ 24
+
+exec_always {
+  gsettings set org.gnome.desktop.interface cursor-theme Vanilla-DMZ
+  gsettings set org.gnome.desktop.interface cursor-size 24
+}
+
+bar {
+ position top
+ mode dock
+ status_command i3blocks
+ pango_markup enabled
+ workspace_buttons yes
+ strip_workspace_numbers no
+}
+
+input type:keyboard {
+    xkb_layout en,ru
+    xkb_options grp:alt_shift_toggle
+}
+
+## Workspace
+workspace 1
+workspace 2
+workspace 3
+workspace 4
+
+## Key bindings
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+p exec $launcher
+bindsym $mod+t exec $filemanager
+bindsym $mod+w exec $browser
+
+### workspaces
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+
+
+# Focus windows (Mod + arrows)
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+# Move windows within workspace (Mod + Shift + arrows)
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# Move container to different workspace (Mod + Shift + Ctrl + arrows)
+# bindsym $mod+Shift+Ctrl+Left move container to workspace prev
+# bindsym $mod+Shift+Ctrl+Right move container to workspace next
+bindsym $mod+Shift+Ctrl+Right move container to workspace number next
+bindsym $mod+Shift+Ctrl+Left move container to workspace number prev
+
+bindsym $mod+Shift+Ctrl+1 move container to workspace 1
+bindsym $mod+Shift+Ctrl+2 move container to workspace 2
+bindsym $mod+Shift+Ctrl+3 move container to workspace 3
+bindsym $mod+Shift+Ctrl+4 move container to workspace 4
+
+# Switch between workspaces (Mod + Ctrl + arrows, optional)
+bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right workspace next
+
+
+# Toggle split orientation
+bindsym $mod+v splitv  # Split vertically
+bindsym $mod+b splith  # Split horizontally
+bindsym $mod+e layout toggle split
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle floating
+bindsym $mod+Shift+space floating toggle

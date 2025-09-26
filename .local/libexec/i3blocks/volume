@@ -1,0 +1,31 @@
+#!/bin/sh
+# Copyright (C) 2018 Minbari
+
+# Color
+color1="#6699ff"
+color2="#e60000"
+
+
+# Left click
+if [ "${BLOCK_BUTTON}" -eq 1 ]; then
+   mixer vol=+5%
+# Middle click
+elif [ "${BLOCK_BUTTON}" -eq 2 ]; then
+   mixer vol.mute=toggle
+# Right click
+elif [ "${BLOCK_BUTTON}" -eq 3 ]; then
+   mixer vol=-5%
+fi
+
+Volume=$(mixer vol | grep -o 'volume=[0-9.]*' | head -1 | cut -d= -f2 | awk '{print int($1 * 100)}')
+Mute=$(mixer vol | grep -o 'mute=[^[:space:]]*' | cut -d= -f2)
+
+if [ "${Volume}" -gt 0 ]; then
+  echo " ${Volume}%"
+  echo " ${Volume}%"
+  echo "$color1"
+else
+   echo " ${Mute}"
+   echo " ${Mute}"
+   echo "$color2"
+fi  

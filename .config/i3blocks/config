@@ -1,0 +1,30 @@
+
+separator_block_width=15
+markup=pango
+
+[disk]
+command=/usr/local/libexec/i3blocks/disk
+instance=/
+interval=30
+
+# [cpu_temp]
+# command=~/.config/i3blocks/scripts/cpu_temp.sh
+# interval=5
+
+[memory]
+command=/usr/local/libexec/i3blocks/memory
+interval=5
+
+[load]
+command=/usr/local/libexec/i3blocks/load
+interval=5
+
+[volume]
+command=~/.local/libexec/i3blocks/volume
+instance=Master
+interval=1
+signal=10
+
+[time]
+command=date '+%d-%m %H:%M:%S'
+interval=1
