@@ -27,6 +27,30 @@ input type:keyboard {
     xkb_options grp:alt_shift_toggle
 }
 
+
+output HDMI-A-1 {
+    mode 3440x1440@49.987Hz
+    position 0 0
+    scale 1
+     render_bit_depth 10
+}
+
+
+exec_always {
+    # GTK scaling
+    dbus-update-activation-environment --systemd GDK_SCALE=1
+    dbus-update-activation-environment --systemd GDK_DPI_SCALE=1
+    
+    # Qt scaling
+    dbus-update-activation-environment --systemd QT_AUTO_SCREEN_SCALE_FACTOR=1
+    dbus-update-activation-environment --systemd QT_SCALE_FACTOR=1
+    
+    # Electron/Chromium apps
+    dbus-update-activation-environment --systemd XCURSOR_SIZE=24
+}
+
+font pango:Inter 10
+
 ## Workspace
 workspace 1
 workspace 2
