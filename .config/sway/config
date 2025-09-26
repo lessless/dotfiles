@@ -49,7 +49,7 @@ exec_always {
     dbus-update-activation-environment --systemd XCURSOR_SIZE=24
 }
 
-font pango:Inter 10
+font pango:Inter 14
 
 ## Workspace
 workspace 1
