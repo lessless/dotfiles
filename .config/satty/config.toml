@@ -1,0 +1,8 @@
+
+[general]
+# Start Satty in fullscreen mode
+fullscreen = true
+copy-command = "wl-copy"
+output-filename = "/tmp/test-%Y-%m-%d_%H:%M:%S.png"
+save-after-copy = true
+default-hide-toolbars = false

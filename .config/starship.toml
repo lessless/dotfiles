@@ -1,0 +1,9 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+[os.symbols]
+FreeBSD = " "
+[package]
+disabled = true
+[elixir]
+disabled=false
+symbol='💧'

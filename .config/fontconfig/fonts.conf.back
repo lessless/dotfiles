@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match target="font">
+        <!-- 
+        <edit name="antialias" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="hinting" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="hintstyle" mode="assign">
+            <const>hintmedium</const>
+        </edit>
+        <edit name="rgba" mode="assign">
+            <const>rgb</const>
+        </edit>
+        <edit name="autohint" mode="assign">
+            <bool>false</bool> 
+        </edit>
+        <edit name="lcdfilter" mode="assign">
+            <const>lcdlight</const>
+        </edit>
+-->
+        <!--
+        <edit name="dpi" mode="assign">
+            <double>102</double>
+        </edit>
+        -->
+    </match>
+
+    <!-- ADD THIS: Font fallbacks for missing characters -->
+    <alias>
+        <family>sans-serif</family>
+        <prefer>
+            <family>Noto Sans</family>
+            <family>DejaVu Sans</family>
+            <family>Font Awesome</family>
+            <family>Noto Color Emoji</family>
+        </prefer>
+    </alias>
+    
+    <alias>
+        <family>serif</family>
+        <prefer>
+            <family>Noto Serif</family>
+            <family>DejaVu Serif</family>
+        </prefer>
+    </alias>
+    
+    <alias>
+        <family>monospace</family>
+        <prefer>
+            <family>Noto Sans Mono</family>
+            <family>DejaVu Sans Mono</family>
+            <family>Font Awesome</family>
+        </prefer>
+    </alias>
+</fontconfig>

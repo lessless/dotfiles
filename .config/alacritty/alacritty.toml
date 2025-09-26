@@ -14,8 +14,9 @@ decorations = "None"
 
 [keyboard]
 bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
+  { key = "F11", action = "ToggleFullscreen" }
 ]
+
 [colors]
 [colors.primary]
 background = '#1a1b26'

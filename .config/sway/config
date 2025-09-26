@@ -1,6 +1,6 @@
 set $mod Mod4
 set $launcher rofi -show drun
-set $term alacritty
+set $term kitty
 set $browser chrome
 set $filemanager dolphin
 
@@ -110,3 +110,7 @@ bindsym $mod+f fullscreen
 
 # Toggle floating
 bindsym $mod+Shift+space floating toggle
+
+# Screenshot
+
+bindsym Print exec grim -g "$(slurp -o -r -c '#ff0000ff')" - | satty --filename - --fullscreen --output-filename "/tmp/satty-$(date '+%Y%m%d-%H:%M:%S').png"
